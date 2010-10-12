@@ -1,0 +1,63 @@
+﻿<?xml version="1.0"?>
+<overlay id="japanize_browser" 
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <script type="application/javascript" src="JSON_Parser.js" />
+  <script type="application/javascript" src="browser.js" />
+
+  <statusbar id="status-bar">
+    
+    <tooltip orient="vertical" id="japanize-status-tooltip">
+      <label id="japanize-status-main" style="font-weight: bold; padding-bottom: 0.5em;">Japanize: オン</label>
+      <label>左クリックして、機能のオン・オフを切り替えることができます。</label>
+      <label>右クリックすると、メニューが表示されます。</label>
+    </tooltip>
+    <tooltip orient="vertical" id="japanize-update-status-tooltip">
+      <label id="japanize-update-status-main" style="font-weight: bold; padding-bottom: 0.5em;">Japanize: 更新中</label>
+    </tooltip>
+        
+    <statusbarpanel
+        id="japanize-status"
+        insertafter="livemark-button"
+        onclick="if (event.button == 0) { JAPANIZE.setMode(! JAPANIZE.getMode()); event.preventBubble(); }"
+        context="japanize-status-popup">
+      <image id="japanize-status-icon" width="16" height="16" src="chrome://japanize/content/icon_on.gif" tooltip="japanize-status-tooltip" />
+      <label id="japanize-status-label" tooltip="japanize-status-tooltip" style="display: none;" />
+
+      <popup
+          id="japanize-status-popup"
+          position="before_end"
+          onpopupshowing="JAPANIZE.showPopup(event); event.preventBubble();"
+          oncommand="JAPANIZE.handlePopup(event); event.preventBubble();"
+          onclick="event.preventBubble();">
+        <menu label="翻訳データの更新方法" accesskey="U">
+          <menupopup onpopupshowing="event.preventBubble();">
+            <menuitem
+                id="japanize-popup-updateeverytime"
+                type="radio" name="japanize-popup-updatemethod"
+                label="毎回確認する" accesskey="E"
+                />
+            <menuitem
+                id="japanize-popup-updateperiodically"
+                type="radio" name="japanize-popup-updatemethod"
+                label="定期的に確認する" accesskey="P" />
+            <menuseparator />
+            <menuitem
+                id="japanize-popup-updatenow"
+                label="ただちに更新" accesskey="R" />
+          </menupopup>
+        </menu>
+        <menuseparator />
+        <menuitem
+            id="japanize-popup-sites"
+            label="サイト設定..." accesskey="S" />
+        <menuseparator />
+        <menuitem
+            id="japanize-popup-enabled" type="checkbox"
+            label="翻訳を実行する" accesskey="E" />
+      </popup>
+      
+    </statusbarpanel>
+  </statusbar>
+
+</overlay>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<RDF:RDF xmlns:em="http://www.mozilla.org/2004/em-rdf#"
+         xmlns:NC="http://home.netscape.com/NC-rdf#"
+         xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <RDF:Description RDF:about="rdf:#$pA9zC"
+                   em:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
+                   em:minVersion="1.5"
+                   em:maxVersion="3.*" />
+  <RDF:Description RDF:about="urn:mozilla:install-manifest"
+                   em:id="kazuho-japanize2@labs.cybozu.co.jp"
+                   em:version="0.8.11"
+                   em:type="2"
+                   em:name="Japanize"
+                   em:description="ネットを日本語化する:Japanize"
+                   em:creator="Cybozu Labs, Inc."
+                   em:homepageURL="http://japanize.31tools.com/"
+                   em:updateURL="http://japanize.31tools.com/download/update.rdf"
+                   em:iconURL="chrome://japanize/content/icon_on.gif"
+                   em:updateKey="MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC39s+q86XE/fuP/cqYubZpO7qPyRVNoIm/wawQlAk8A8YJvgKLmFwcnNx58whXhfQ7X0AuoSmTqKHE2jniPJJRivVOHSUwQLzYvZVhxD5MOuGBZi8M3POZTlLhHcXjAEwupvkGrUJ29Xc6Mof5kWG5JAxgtf6Bz5qewqbbFQo+1wIDAQAB">
+    <em:targetApplication RDF:resource="rdf:#$pA9zC"/>
+  </RDF:Description>
+</RDF:RDF>
